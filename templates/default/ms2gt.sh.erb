@@ -1,0 +1,6 @@
+export PATH=<%=@path%>:$PATH
+
+if [[ "$PATH" =~ (^|:)"<%=@path%>"(:|$) ]]; then
+    return 0
+fi
+export PATH=<%=@path%>:$PATH
