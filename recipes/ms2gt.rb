@@ -1,11 +1,11 @@
-remote_file "#{Chef::Config[:file_cache_path]}/ms2gt0.5.tar.gz" do
-	source "ftp://sidads.colorado.edu/pub/NSIDC/ms2gt0.5.tar.gz"
-	notifies :run, "script[install_ms2gt]", :immediately
-end
-
 directory "/opt/ms2gt" do 
 	owner node['riverice']['user']
 	group node['riverice']['user']
+end
+
+remote_file "#{Chef::Config[:file_cache_path]}/ms2gt0.5.tar.gz" do
+	source "ftp://sidads.colorado.edu/pub/NSIDC/ms2gt0.5.tar.gz"
+	notifies :run, "script[install_ms2gt]", :immediately
 end
 
 script "install_ms2gt" do
