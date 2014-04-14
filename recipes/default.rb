@@ -28,8 +28,8 @@ include_recipe "riverice::python"
 include_recipe "riverice::env"
 include_recipe "riverice::ms2gt"
 include_recipe "riverice::modules"
+include_recipe "riverice::lmod"
 include_recipe "riverice::mounts"
-
 # TODO: 
 # matlab
 # idl
