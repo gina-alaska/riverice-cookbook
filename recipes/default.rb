@@ -7,7 +7,8 @@
 # All rights reserved - Do Not Redistribute
 #
 
-include_recipe 'yum::epel'
+include_recipe 'yum-epel'
+include_recipe 'yum-puias'
 
 user 'processing'
 
@@ -23,11 +24,9 @@ node['riverice']['packages'].each do |pkg|
 end
 
 include_recipe "build-essential"
-include_recipe 'riverice::szip'
 include_recipe "riverice::python"
 include_recipe "riverice::env"
 include_recipe "riverice::ms2gt"
-include_recipe "riverice::modules"
 include_recipe "riverice::lmod"
 include_recipe "riverice::mounts"
 # TODO: 

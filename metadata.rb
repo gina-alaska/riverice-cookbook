@@ -8,5 +8,7 @@ version          '0.3.0'
 
 depends 'python'
 depends 'build-essential'
-depends 'yum', '~> 2.0'
+depends 'yum', '~> 3.0'
+depends 'yum-epel'
+depends 'yum-puias'
 depends 'sudo'
