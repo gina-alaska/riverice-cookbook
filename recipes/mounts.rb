@@ -1,3 +1,5 @@
+include_recipe 'nfs::default'
+
 directory "/mnt/snpp"
 
 mount "/mnt/snpp" do
