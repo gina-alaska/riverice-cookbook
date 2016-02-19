@@ -1,9 +1,7 @@
-%w{lua-devel lua-posix lua-filesystem}.each do |pkg|
-	package pkg
-end
+package %w{lua-devel lua-posix lua-filesystem rsync}
 
 remote_file "#{Chef::Config[:file_cache_path]}/lmod-5.4.tar.bz2" do
-	source node['riverice']['lmod_src_url'] 
+	source node['riverice']['lmod_src_url']
 	notifies :run, 'script[install_lmod]'
 end
 
