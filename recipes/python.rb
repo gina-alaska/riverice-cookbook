@@ -1,11 +1,13 @@
-include_recipe "python"
+# include_recipe "python"
+python_runtime '2'
 
+package %w{ blas-devel lapack-devel libjpeg libjpeg-devel hdf5-devel netcdf-devel netcdf42-gcc-hdf5-188-devel }
 
-%w{ blas-devel lapack-devel }.each do |pkg|
-	package pkg
+python_package "pillow"
+python_package "numpy"
+python_package "scipy" do
+	timeout 3600
 end
 
-python_pip "pillow"
-python_pip "numpy"
-python_pip "scipy"
-python_pip "netCDF4"
+ENV["HDF5_DIR"] = "/usr/local/netcdf/gcc/hdf5-1.8.8/4.2"
+python_package "netCDF4"
