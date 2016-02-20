@@ -29,6 +29,7 @@ include_recipe "riverice::env"
 #include_recipe "riverice::ms2gt"
 include_recipe "riverice::lmod"
 include_recipe "riverice::mounts"
+include_recipe "riverice::mirror_data"
 # TODO:
 # matlab
 # idl

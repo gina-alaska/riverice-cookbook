@@ -1,14 +1,17 @@
 include_recipe 'nfs::default'
 
-directory "/mnt/snpp"
-
 mount "/mnt/snpp" do
-	fstype "nfs"
 	device "icarus.gina.alaska.edu:/san/nppup-data"
+	fstype "nfs"
 	options "ro"
-	action [:mount, :enable]
+	action [:umount, :disable]
 end
 
-link "/home/#{node['riverice']['user']}/viirs" do
-	to "/mnt/snpp"
+directory "/mnt/data"
+
+mount "/mnt/data" do
+	device "/dev/mapper/VolGroupArray-lvdata"
+	options "rw"
+	action [:mount, :enable]
+	only_if { ::FileTest.exists?("/dev/mapper/VolGroupArray-lvdata") }
 end
