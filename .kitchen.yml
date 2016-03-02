@@ -17,3 +17,4 @@ suites:
     attributes:
       riverice:
         user: 'vagrant'
+        fetch_cron_action: 'delete'

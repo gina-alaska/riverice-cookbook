@@ -19,9 +19,7 @@ sudo 'processing' do
 	commands ['/usr/bin/yum']
 end
 
-node['riverice']['packages'].each do |pkg|
-	package pkg
-end
+package node['riverice']['packages']
 
 include_recipe "build-essential"
 include_recipe "riverice::python"
