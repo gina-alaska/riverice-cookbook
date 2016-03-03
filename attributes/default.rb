@@ -10,3 +10,27 @@ default['riverice']['lmod_src_url'] = "http://downloads.sourceforge.net/project/
 default['riverice']['snpp_data'] = "/mnt/data/snpp"
 # accepts what would be given crontab
 default['riverice']['fetch_cron_action'] = 'create'
+
+default['ldm']['source'] = "ftp://ftp.unidata.ucar.edu/pub/ldm/ldm-6.12.14.tar.gz"
+default['ldm']['checksum'] = "41205ee7b75ddc552d243bc2dbb39f79c076ce87bf75a7d42f90dff96ecea84d"
+default['ldm']['requests'] = [ ]
+default['ldm']['allows'] = [
+  {
+    feedset: "ANY",
+    hostname: "(10.19.16.*)",
+    ok: ".*"
+  },
+  {
+    feedset: "ANY",
+    hostname: "(137.229.19.*)",
+    ok: ".*"
+  }
+]
+default['ldm']['accepts'] = [ ]
+default['ldm']['scours'] = [
+  {
+    directory: "/opt/ldm/data",
+    days_old: "3",
+    pattern: "*"
+  }
+]

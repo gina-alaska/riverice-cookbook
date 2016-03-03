@@ -32,6 +32,8 @@ include_recipe "riverice::mirror_data"
 # TODO: update idl cookbook to handle no url being set
 include_recipe "idl" if node['idl']['url']
 
+include_recipe 'ldm::default'
+
 # TODO:
 # matlab - currently not easily automated, requires installing on system with gui, zipping up
 #          and copying over to target system.  Then manually installing required packages
