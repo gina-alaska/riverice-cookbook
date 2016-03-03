@@ -7,23 +7,6 @@ directory "/home/#{node['riverice']['user']}/.bashrc.d" do
 end
 
 #
-# Write a .bash_profile that just loads .bashrc
-#
-file "/home/#{node['riverice']['user']}/.bash_profile" do
-	owner node['riverice']['user']
-	mode '0644'
-	content <<-EOH.gsub(/^ {4}/, '')
-    # This file is written by Chef for #{node['fqdn']}.
-    # Do NOT modify this file by hand.
-
-    # Source our bashrc
-    if [ -f ~/.bashrc ]; then
-    source ~/.bashrc
-    fi
-	EOH
-end
-
-#
 # Load the regular profile
 #
 file "/home/#{node['riverice']['user']}/.bashrc" do
@@ -46,5 +29,7 @@ file "/home/#{node['riverice']['user']}/.bashrc" do
     source "$rc"
     done
     fi
+
+    export PATH=$PATH:/opt/Matlab/bin:/opt/idl/idl/bin
 	EOH
 end
