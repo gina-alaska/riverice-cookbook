@@ -24,7 +24,7 @@ end
 
 cron "mirror_viirs_products" do
   user node['riverice']['user']
-  command "#{mirror_script} -f uafgina -i viirs -p level1 -o '#{node['riverice']['snpp_data']}'"
+  command "#{mirror_script} -n -f uafgina -i viirs -p level1 -p level2 -o '#{node['riverice']['snpp_data']}'"
   minute '*/15'
   action node['riverice']['fetch_cron_action']
 end
