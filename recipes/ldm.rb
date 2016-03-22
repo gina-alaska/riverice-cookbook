@@ -20,3 +20,14 @@ iptables_ng_rule '388-ldm-udp' do
   ip_version 4
   action :create
 end
+
+file '/opt/ldm/var/queues/ldm.pq' do
+  mode '0664'
+  only_if { ::FileTest.exists?('/opt/ldm/var/queues/ldm.pq') }
+end
+
+group 'ldm' do
+  append true
+  members node['riverice']['user']
+  action :modify
+end
