@@ -41,7 +41,7 @@ GRAPH
   poise-python (1.2.1)
     poise (~> 2.0)
     poise-languages (~> 1.2)
-  riverice (0.7.3)
+  riverice (0.7.4)
     build-essential (>= 0.0.0)
     gina-iptables (>= 0.0.0)
     idl (>= 0.0.0)
