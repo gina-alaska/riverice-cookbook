@@ -6,7 +6,7 @@
 
 include_recipe 'gina_firewall::default'
 
-%w{ 137.229.19.0/24 10.19.16.0/24 10.0.19.0/24 }.each do |iprange|
+%w( 137.229.19.0/24 10.19.16.0/24 10.0.19.0/24 ).each do |iprange|
   firewall_rule "388-ldm-tcp-#{iprange}" do
     port 388
     source iprange
@@ -19,7 +19,6 @@ include_recipe 'gina_firewall::default'
     command :allow
   end
 end
-
 
 file '/opt/ldm/var/queues/ldm.pq' do
   mode '0664'
