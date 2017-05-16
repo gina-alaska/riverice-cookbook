@@ -2,17 +2,17 @@
 # Create an .bashrc.d-style directory for arbitrary loading.
 #
 directory "/home/#{node['riverice']['user']}/.bashrc.d" do
-	owner node['riverice']['user']
-	mode '0755'
+  owner node['riverice']['user']
+  mode '0755'
 end
 
 #
 # Load the regular profile
 #
 file "/home/#{node['riverice']['user']}/.bashrc" do
-	owner node['riverice']['user']
-	mode '0644'
-	content <<-EOH.gsub(/^ {4}/, '')
+  owner node['riverice']['user']
+  mode '0644'
+  content <<-EOH.gsub(/^ {4}/, '')
     # This file is written by Chef for #{node['fqdn']}.
     # Do NOT modify this file by hand.
 
