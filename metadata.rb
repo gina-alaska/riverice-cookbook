@@ -8,6 +8,7 @@ version          '0.7.4'
 
 chef_version '>= 12.6'
 
+depends 'gina-server'
 depends 'poise-python'
 depends 'build-essential'
 depends 'yum', '~> 3.0'
@@ -17,4 +18,4 @@ depends 'sudo'
 depends 'nfs'
 depends 'idl'
 depends 'ldm'
-depends 'gina-iptables'
+# depends 'gina-iptables'
