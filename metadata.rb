@@ -6,6 +6,8 @@ description      'Installs/Configures riverice algorithms'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 version          '0.7.4'
 
+chef_version '>= 12.6'
+
 depends 'poise-python'
 depends 'build-essential'
 depends 'yum', '~> 3.0'

@@ -35,6 +35,5 @@ include_recipe 'idl' if node['idl']['url']
 include_recipe 'ldm::default'
 include_recipe 'riverice::ldm'
 
-# TODO:
-# matlab - currently not easily automated, requires installing on system with gui, zipping up
+# TODO: matlab - currently not easily automated, requires installing on system with gui, zipping up
 #          and copying over to target system.  Then manually installing required packages
