@@ -22,7 +22,8 @@ end
 package node['riverice']['packages']
 
 include_recipe 'build-essential'
-include_recipe 'riverice::python'
+# TODO: need to talk with Jay Hoffman about python updates
+# include_recipe 'riverice::python'
 include_recipe 'riverice::env'
 # include_recipe "riverice::ms2gt"
 include_recipe 'riverice::lmod'
