@@ -73,7 +73,7 @@ GRAPH
     poise (~> 2.7)
     poise-languages (~> 2.0)
   resolver (1.3.0)
-  riverice (0.8.0)
+  riverice (0.8.1)
     build-essential (>= 0.0.0)
     gina-server (>= 0.0.0)
     gina_firewall (>= 0.0.0)
