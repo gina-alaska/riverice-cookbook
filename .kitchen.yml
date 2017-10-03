@@ -19,3 +19,5 @@ suites:
       riverice:
         user: 'vagrant'
         fetch_cron_action: 'delete'
+        partner_networks:
+          - 192.168.1.0/24

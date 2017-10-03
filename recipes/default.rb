@@ -38,3 +38,20 @@ include_recipe 'riverice::ldm'
 
 # TODO: matlab - currently not easily automated, requires installing on system with gui, zipping up
 #          and copying over to target system.  Then manually installing required packages
+
+
+include_recipe 'gina_firewall::default'
+# allow external partner networks to ssh into system
+
+partner_networks = []
+partner_networks += node['riverice']['partner_networks'] unless node['riverice']['partner_networks'].nil?
+
+partner_networks.each do |network|
+  # open standard ssh port
+  firewall_rule "ssh #{network}" do
+    port     22  
+    source   network
+    protocol :tcp
+    command  :allow
+  end 
+end
