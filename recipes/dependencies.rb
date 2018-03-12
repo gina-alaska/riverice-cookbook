@@ -21,6 +21,28 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
-package (szip)
-#package 'hdf4-devel'
-#package %w(hdf4 hdf5 szip)
+package %w( epel-release )
+package %w( python python-pip hdf-devel hdf5-devel gcc gcc-c++ ) # devel includes "base" hdf4 and hdf5
+
+# install szip in /usr/local/bin
+remote_file '/tmp/szip-2.1.1.tar.gz' do
+  source 'https://support.hdfgroup.org/ftp/lib-external/szip/2.1.1/src/szip-2.1.1.tar.gz'
+  action :create_if_missing
+end
+
+execute 'extract_tarball' do
+  cwd '/tmp'
+  command 'tar xzvf szip-2.1.1.tar.gz' 
+  not_if { ::File.directory?('/tmp/szip-2.1.1') }
+end
+
+bash 'build_szip' do
+  cwd '/tmp/szip-2.1.1'
+  code <<-EOH
+     ./configure --prefix=/usr/local
+     make 
+     make check
+     make install
+     EOH
+  not_if { ::File.exists?('/usr/local/lib/libsz.so') }
+end
