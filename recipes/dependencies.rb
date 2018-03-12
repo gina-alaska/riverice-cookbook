@@ -21,5 +21,6 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
-include_recipe 'riverice::dependencies'
-include_recipe 'riverice::gmuflood_bashrcd'
+package (szip)
+#package 'hdf4-devel'
+#package %w(hdf4 hdf5 szip)

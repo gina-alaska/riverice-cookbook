@@ -9,7 +9,7 @@ provisioner:
   name: chef_zero
 
 platforms:
-  - name: centos-6.9
+  - name: centos-7
 
 suites:
   - name: default
@@ -18,6 +18,6 @@ suites:
     attributes:
       riverice:
         user: 'vagrant'
-        fetch_cron_action: 'delete'
-        partner_networks:
-          - 192.168.1.0/24
+#        fetch_cron_action: 'delete'
+#        partner_networks:
+#          - 192.168.1.0/24

@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+## 1.0.0 - 2018-03-12
+- completely revamping all recipes for new hardware and centos7
+
 ## 0.8.1 - 2017-10-03
 - add use of `node['riverice]['partner_networks']` array to provide ssh and ldm 
   access to partner networks.  Format: `192.168.1.0/24`
