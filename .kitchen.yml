@@ -11,10 +11,16 @@ provisioner:
 platforms:
   - name: centos-7
 
+verifier:
+  name: inspec 
+
 suites:
   - name: default
     run_list:
       - recipe[riverice::default]
+    verifier:
+      inspec_tests:
+        - test/smoke/default
     attributes:
       riverice:
         user: 'vagrant'

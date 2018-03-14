@@ -21,5 +21,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
+include_recipe 'riverice::_users'
 include_recipe 'riverice::dependencies'
 include_recipe 'riverice::gmuflood_bashrcd'
+include_recipe 'riverice::ms2gt'
