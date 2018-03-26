@@ -1,8 +1,18 @@
 # riverice cookbook
 The cookbook to manage riverice.gina.alaska.edu
 
+# Contents
+The riverice cookbook installs and configures the following:
+* Centos Operating System
+* User accounts as requested by the project stakeholders
+* Required Software pkgs and their dependencies:
+  * Polar2grid
+  * Production LDM server
+  * GINA mirror_products.sh (launched via cron)
+
+
 # Usage
-Include riverice::default in your run list.  Ensure
+Include riverice::default in your run list.  
 
 # Attributes
 
@@ -16,6 +26,7 @@ node['riverice']['partner_networks'] is an array of networks that are provided s
 
 # Authors
 
-* Scott Macfarlane (<scott@gina.alaska.edu>)
+* support@gina.alaska.edu
+* Scott Macfarlane 
 * Will Fisher
 * Dayne Broderson
