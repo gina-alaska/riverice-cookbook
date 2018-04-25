@@ -15,4 +15,5 @@ GRAPH
   riverice (1.0.0)
     gina_firewall (>= 0.0.0)
     ldm (>= 0.0.0)
+    user (>= 0.0.0)
   user (0.7.0)

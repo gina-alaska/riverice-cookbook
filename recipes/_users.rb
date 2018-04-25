@@ -4,8 +4,9 @@ gmuflood_ssh_keys = []
 
 # if we've set ssh keys in gmuflood environment, add them
 if node['gmuflood'] && node['gmuflood']['ssh_keys']
-  gmuflood_ssh_keys.push node['gmuflood']['ssh_keys']
-
+  node['gmuflood']['ssh_keys'].each do |key|
+    gmuflood_ssh_keys.push key
+  end
 end
 
 # add keys for users belonging to gmuflood group in data bags
@@ -15,9 +16,20 @@ gmuflood_users.each do |userinfo|
 end
 
 # update node with all keys
-node['gmuflood']['ssh_keys'] = gmuflood_ssh_keys
+node.default['gmuflood']['ssh_keys'] = gmuflood_ssh_keys
 
-# assign all keys to gmuflood' authorized_keys file
-gmuflood_user 'gmuflood' do
+# create new gmuflood user and assign all keys to authorized_keys file
+group 'gmuflood' do
+  gid 7000
+  action :create
+end
+
+user 'gmuflood' do
+  comment 'shared GMU Flood user'
+  home '/home/gmuflood'
+  shell '/bin/bash'
+  uid 7000
+  gid 7000
   ssh_keys gmuflood_ssh_keys
+  action :create
 end

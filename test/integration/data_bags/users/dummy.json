@@ -1,0 +1,5 @@
+{
+  "id": "dummy",
+  "groups": ["awips"],
+  "ssh_keys": ["dummy-ssh-key"]
+}

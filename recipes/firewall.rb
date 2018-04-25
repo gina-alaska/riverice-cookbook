@@ -1,7 +1,10 @@
 #
+# Cookbook Name:: riverice
+# Recipe:: firewall
+#
 # The MIT License (MIT)
 #
-# Copyright (c) 2016 UAF GINA
+# Copyright:: 2018, UAF GINA
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -20,11 +23,13 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
-
-include_recipe 'riverice::_users'
-include_recipe 'riverice::dependencies'
-include_recipe 'riverice::gmuflood_bashrcd'
-include_recipe 'riverice::ms2gt'
-include_recipe 'riverice::crontabs'
-include_recipe 'riverice::ldm'
-include_recipe 'riverice::firewall'
+# open firewall rules from environment
+if node.default['gmuflood'] && node.default['gmuflood']['networks']
+  node.default['gmuflood']['networks']['network'].each do |ntwrk|
+    firewall_rule "from-env-#{ntwrk}" do
+      port 22
+      source ntwrk
+      command :allow
+    end
+  end
+end 

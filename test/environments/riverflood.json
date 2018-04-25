@@ -1,0 +1,22 @@
+{
+  "name": "riverflood",
+  "description": "Test Kitchen Environment",
+  "json_class": "Chef::Environment",
+  "chef_type": "environment",
+  "default_attributes": {
+    "gmuflood": {
+      "networks": [
+         {
+           "network": "10.11.12.13/24",
+           "note": "test-network"  
+         }
+      ],
+      "ssh_keys": [
+           "external_user_ssh_key_for_riverflood",
+           "internal_user_ssh_key_for_riverflood"
+      ]
+    }
+  },
+  "overrride_attributes": {
+  }
+}
