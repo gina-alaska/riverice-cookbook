@@ -37,7 +37,7 @@ cron 'flooddriver' do
   shell "/bin/bash"
   minute '0,15,30,45'
   user 'gmuflood'
-  command "/home/gmuflood/VIIRS_Flood/bin/FloodDriver-op.plx --start "0" --end "24" > /home/gmuflood/scratch/VIIRS/logs/"`date +\%Y\%j\%H\%M`".log.txt 2>&1"
+  command '/home/gmuflood/VIIRS_Flood/bin/FloodDriver-op.plx --start "0" --end "24" > /home/gmuflood/scratch/VIIRS/logs/"`date +\%Y\%j\%H\%M`".log.txt 2>&1'
 end
 
 #0 18 * * * /bin/bash -l -c 'find /mnt/data/snpp/ -mtime +12 -delete' 
@@ -46,7 +46,7 @@ cron 'delete-file' do
   minute '0'
   hour '18'
   user 'gmuflood'
-  command "/bin/bash -l -c 'find /mnt/data/snpp/ -mtime +12 -delete"
+  command '/bin/bash -l -c "find /mnt/data/snpp/ -mtime +12 -delete"'
 end
 
 #0 21 * * * /bin/bash -l -c 'find /mnt/data/snpp/ -type d -empty -delete'
@@ -55,7 +55,7 @@ cron 'delete-dir' do
   minute '0'
   hour '21'
   user 'gmuflood'
-  command "/bin/bash -l -c 'find /mnt/data/snpp/ -type d -empty -delete"
+  command '/bin/bash -l -c "find /mnt/data/snpp/ -type d -empty -delete"'
 end
 
 # */15 * * * * /home/gmuflood/bin/mirror_products.sh -n -f gilmore -i viirs -p level1 -p level2 -o '/mnt/data/snpp'
@@ -63,5 +63,5 @@ cron 'mirror-script' do
   shell "/bin/bash"
   minute '0,15,30,45'
   user 'gmuflood'
-  command "/home/gmuflood/bin/mirror_products.sh -n -f gilmore -i viirs -p level1 -p level2 -o '/mnt/data/snpp'"
+  command '/home/gmuflood/bin/mirror_products.sh -n -f gilmore -i viirs -p level1 -p level2 -o "/mnt/data/snpp"'
 end

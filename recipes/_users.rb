@@ -24,12 +24,20 @@ group 'gmuflood' do
   action :create
 end
 
-user 'gmuflood' do
+user_account 'gmuflood' do
   comment 'shared GMU Flood user'
   home '/home/gmuflood'
   shell '/bin/bash'
   uid 7000
   gid 7000
   ssh_keys gmuflood_ssh_keys
+  ssh_keygen false
   action :create
+end
+
+sudo 'processing' do
+  user node['riverice']['user']
+  runas node['riverice']['user']
+  nopasswd true
+  commands ['/usr/bin/yum']
 end
