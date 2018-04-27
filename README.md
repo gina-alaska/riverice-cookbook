@@ -1,5 +1,5 @@
 # riverice cookbook
-The cookbook to manage riverice.gina.alaska.edu
+The cookbook to manage riverflood.gina.alaska.edu & riverice.gina.alaska.edu
 
 # Contents
 The riverice cookbook installs and configures the following:
@@ -9,10 +9,13 @@ The riverice cookbook installs and configures the following:
   * Polar2grid
   * Production LDM server
   * GINA mirror_products.sh (launched via cron)
+  * Envi/idl
+  * Matlab
 
 
 # Usage
 Include riverice::default in your run list.  
+Include in the riverice environment.
 
 # Attributes
 
@@ -27,6 +30,3 @@ node['riverice']['partner_networks'] is an array of networks that are provided s
 # Authors
 
 * support@gina.alaska.edu
-* Scott Macfarlane 
-* Will Fisher
-* Dayne Broderson
