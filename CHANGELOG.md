@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+## 1.0.2 - 2018-05-01
+- pulling in github.com/gina-alaska/ldm-cookbook
+
 ## 1.0.1 - 2018-04-30
 - dependencies for manual installation of idl and matlab
 - fixed wrong firewall syntax pulling from environment

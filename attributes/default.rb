@@ -11,8 +11,6 @@ default['riverice']['snpp_data'] = '/mnt/data/snpp'
 # accepts what would be given crontab
 default['riverice']['fetch_cron_action'] = 'create'
 
-default['ldm']['source'] = 'ftp://ftp.unidata.ucar.edu/pub/ldm/ldm-6.12.14.tar.gz'
-default['ldm']['checksum'] = '41205ee7b75ddc552d243bc2dbb39f79c076ce87bf75a7d42f90dff96ecea84d'
 default['ldm']['requests'] = []
 default['ldm']['allows'] = [
   {
