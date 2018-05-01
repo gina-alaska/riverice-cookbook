@@ -30,6 +30,6 @@ file "/home/#{node['riverice']['user']}/.bashrc" do
     done
     fi
 
-    export PATH=$PATH:/opt/Matlab/bin:/opt/idl/idl/bin
+    export PATH=$PATH:/opt/ldm/bin:/opt/Matlab/bin:/opt/idl/idl/bin
 	EOH
 end

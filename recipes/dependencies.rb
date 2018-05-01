@@ -25,6 +25,7 @@ package %w( epel-release )
 package %w( python python-pip hdf-devel hdf5-devel gcc gcc-c++ ) # devel includes "base" hdf4 and hdf5
 package %w( blas-devel lapack-devel libjpeg-devel netcdf-devel )
 package %w( libXp libXpm libXmu )
+package %w( libxml2-python libxml2-devel )
 
 %w( pillow numpy scipy netCDF4 ).each do |python_module|
   execute "pip install #{python_module}"
