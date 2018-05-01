@@ -9,9 +9,12 @@ The riverice cookbook installs and configures the following:
   * Polar2grid
   * Production LDM server
   * GINA mirror_products.sh (launched via cron)
-  * Envi/idl
+  * Envi/idl 
   * Matlab
 
+# Manual Installation Steps
+* install idl in /usr/local
+* install idl license file in /usr/local/idl/license/license.dat
 
 # Usage
 Include riverice::default in your run list.  

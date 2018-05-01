@@ -24,12 +24,30 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 # open firewall rules from environment
-if node.default['gmuflood'] && node.default['gmuflood']['networks']
-  node.default['gmuflood']['networks']['network'].each do |ntwrk|
-    firewall_rule "from-env-#{ntwrk}" do
-      port 22
-      source ntwrk
-      command :allow
-    end
+
+include_recipe 'gina_firewall::default'
+
+# pull in ssh from partner networks
+node['gmuflood']['networks'].each do |ntwrk|
+  firewall_rule "from-env-#{ntwrk['note']}" do
+    port 22
+    source ntwrk['network']
+    command :allow
   end
-end 
+end
+
+networks = %w( 137.229.19.0/24 10.19.16.0/24 10.0.19.0/24 )
+networks.each do |iprange|
+  firewall_rule "388-ldm-tcp-#{iprange}" do
+    port 388
+    protocol :tcp
+    source iprange
+    command :allow
+  end
+  firewall_rule "388-ldm-udp-#{iprange}" do
+    port 388
+    protocol :udp
+    source iprange
+    command :allow
+  end 
+end

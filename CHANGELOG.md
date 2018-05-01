@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+## 1.0.1 - 2018-04-30
+- dependencies for manual installation of idl and matlab
+- fixed wrong firewall syntax pulling from environment
+
 ## 1.0.0 - 2018-03-12
 - completely revamping all recipes for new hardware and centos7
 
