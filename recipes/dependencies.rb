@@ -26,6 +26,7 @@ package %w( python python-pip hdf-devel hdf5-devel gcc gcc-c++ ) # devel include
 package %w( blas-devel lapack-devel libjpeg-devel netcdf-devel )
 package %w( libXp libXpm libXmu )
 package %w( libxml2-python libxml2-devel )
+packate %w( environment-modules )
 
 %w( pillow numpy scipy netCDF4 ).each do |python_module|
   execute "pip install #{python_module}"

@@ -41,3 +41,15 @@ sudo 'processing' do
   nopasswd true
   commands ['/usr/bin/yum']
 end
+
+# add gmuflood to group ldm
+group 'ldm' do
+  members 'gmuflood'
+end
+
+# add g+w to /opt/ldm/var/queues/ldm.pq
+file '/opt/ldm/var/queues/ldm.pq' do
+  mode '0664'
+end
+
+# copy /etc/skel/.bash_profile here 

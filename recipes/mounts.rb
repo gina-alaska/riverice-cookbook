@@ -1,6 +1,7 @@
 #include_recipe 'nfs::default'
 
 directory '/mnt/data'
+directory '/mnt/data/scratch'
 
 mount '/mnt/data' do
   device '/dev/mapper/VolGroupArray-lvdata'

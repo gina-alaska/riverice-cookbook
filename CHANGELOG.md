@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+## 1.0.3 - 2018-05-22
+- adding 664 permissions to ldm queue
+- adding gmuflood user to ldm group
+
 ## 1.0.2 - 2018-05-01
 - pulling in github.com/gina-alaska/ldm-cookbook
 
