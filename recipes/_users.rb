@@ -47,9 +47,4 @@ group 'ldm' do
   members 'gmuflood'
 end
 
-# add g+w to /opt/ldm/var/queues/ldm.pq
-file '/opt/ldm/var/queues/ldm.pq' do
-  mode '0664'
-end
-
 # copy /etc/skel/.bash_profile here 

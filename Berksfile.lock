@@ -12,7 +12,7 @@ GRAPH
     firewall (>= 2.6.1)
   ldm (0.5.0)
     user (>= 0.0.0)
-  riverice (1.0.2)
+  riverice (1.0.3)
     gina_firewall (>= 0.0.0)
     ldm (>= 0.0.0)
     sudo (>= 0.0.0)
