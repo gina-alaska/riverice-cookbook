@@ -34,30 +34,3 @@ execute "pip install --upgrade setuptools"
 %w( pillow numpy scipy netCDF4 ).each do |python_module|
   execute "pip install #{python_module}"
 end
-
-# install szip in /usr/local/bin
-remote_file '/tmp/szip-2.1.1.tar.gz' do
-  source 'https://support.hdfgroup.org/ftp/lib-external/szip/2.1.1/src/szip-2.1.1.tar.gz'
-  action :create_if_missing
-end
-
-execute 'extract_tarball' do
-  cwd '/tmp'
-  command 'tar xzvf szip-2.1.1.tar.gz' 
-  not_if { ::File.directory?('/tmp/szip-2.1.1') }
-end
-
-bash 'build_szip' do
-  cwd '/tmp/szip-2.1.1'
-  code <<-EOH
-     ./configure --prefix=/usr/local
-     make 
-     make check
-     make install
-     EOH
-  not_if { ::File.exists?('/usr/local/lib/libsz.so') }
-end
-
-# not installing this, hasn't been accessed since 2014 on riverice.gina
-#netcdf42-gcc-hdf5-188-devel
-#ENV['HDF5_DIR'] = '/usr/local/netcdf/gcc/hdf5-1.8.8/4.2'

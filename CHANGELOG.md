@@ -4,6 +4,7 @@
 
 ## 1.0.4 - 2018-05-24
 - updating crontab for newer ice_cron version
+- pulled szip installation, was failing to do as intended
 
 ## 1.0.3 - 2018-05-22
 - adding 664 permissions to ldm queue
