@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+## 1.0.5 - 2018-05-25
+- corrected script name in crontab entry
+
 ## 1.0.4 - 2018-05-24
 - updating crontab for newer ice_cron version
 - pulled szip installation, was failing to do as intended
