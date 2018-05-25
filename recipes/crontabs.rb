@@ -25,11 +25,11 @@
 # THE SOFTWARE.
 
 # 32 * * * * /home/gmuflood/scripts/ice_cron.v32.gina.sh >  /home/gmuflood/scripts/logs/log.32.txt 2>&1
-cron 'ice-cron32' do
+cron 'ice-cron43' do
   shell "/bin/bash"
   minute '32'
   user 'gmuflood'
-  command "/home/gmuflood/scripts/ice_cron.v32.gina.sh >  /home/gmuflood/scripts/logs/log.32.txt 2>&1"
+  command "/home/gmuflood/scripts/ice_cron.v43.gina.sh >  /home/gmuflood/scripts/logs/log.43.txt 2>&1"
 end
 
 #*/15 * * * *  /bin/bash -l -c '/home/gmuflood/VIIRS_Flood/bin/FloodDriver-op.plx --start "0" --end "24" > /home/gmuflood/scratch/VIIRS/logs/"`date +\%Y\%j\%H\%M`".log.txt 2>&1 '

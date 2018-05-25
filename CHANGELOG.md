@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+## 1.0.4 - 2018-05-24
+- updating crontab for newer ice_cron version
+
 ## 1.0.3 - 2018-05-22
 - adding 664 permissions to ldm queue
 - adding gmuflood user to ldm group
