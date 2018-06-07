@@ -42,10 +42,4 @@ sudo 'processing' do
   commands ['/usr/bin/yum']
 end
 
-# add gmuflood to group ldm
-group 'ldm' do
-  members ['gmuflood']
-  append  true 
-end
-
 # copy /etc/skel/.bash_profile here 

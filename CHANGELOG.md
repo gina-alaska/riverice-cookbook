@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+## 1.0.7 - 2018-06-07
+- fixing behavior diff on prod system than kitchen converge
+
 ## 1.0.6 - 2018-06-07
 - fixing syntax bug in group membership for ldm
 
