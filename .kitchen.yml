@@ -7,7 +7,6 @@ driver:
 
 provisioner:
   name: chef_zero
-  require_chef_omnibus: 12.21.31
   environments_path: 'test/environments'
   client_rb:
     environment: riverflood

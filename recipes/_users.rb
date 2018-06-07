@@ -44,7 +44,8 @@ end
 
 # add gmuflood to group ldm
 group 'ldm' do
-  members 'gmuflood'
+  members ['gmuflood']
+  append  true 
 end
 
 # copy /etc/skel/.bash_profile here 

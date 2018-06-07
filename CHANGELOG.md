@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+## 1.0.6 - 2018-06-07
+- fixing syntax bug in group membership for ldm
+
 ## 1.0.5 - 2018-05-25
 - corrected script name in crontab entry
 
